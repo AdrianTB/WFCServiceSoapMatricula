@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e9ab710e-df79-4005-94a4-7bfc03001f11" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56484/ServiceMatricula.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceMatricula.wsdl" MetadataType="Wsdl" ID="638062d5-63a6-4469-bbef-88068ebdc0c6" SourceId="1" SourceUrl="http://localhost:56484/ServiceMatricula.svc?wsdl" />
+    <MetadataFile FileName="ServiceMatricula.xsd" MetadataType="Schema" ID="928ed1ee-a1d4-4c54-87cb-2b0332fadaed" SourceId="1" SourceUrl="http://localhost:56484/ServiceMatricula.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceMatricula.disco" MetadataType="Disco" ID="3d4fe1e5-9290-4c49-9fcb-64aca05e0ac6" SourceId="1" SourceUrl="http://localhost:56484/ServiceMatricula.svc?disco" />
+    <MetadataFile FileName="ServiceMatricula1.xsd" MetadataType="Schema" ID="f5dd8c86-af89-432b-9c7e-8f5be8eedc5f" SourceId="1" SourceUrl="http://localhost:56484/ServiceMatricula.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceMatricula2.xsd" MetadataType="Schema" ID="47588e7d-5faf-4f2c-8bb7-3fb901d2cdd5" SourceId="1" SourceUrl="http://localhost:56484/ServiceMatricula.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceMatricula3.xsd" MetadataType="Schema" ID="aa262edb-b3e5-4f99-aaea-dbd48dfcb85e" SourceId="1" SourceUrl="http://localhost:56484/ServiceMatricula.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WFCServiceMatricula.ServiceMatricula" CodeBehind="ServiceMatricula.svc.cs" %>

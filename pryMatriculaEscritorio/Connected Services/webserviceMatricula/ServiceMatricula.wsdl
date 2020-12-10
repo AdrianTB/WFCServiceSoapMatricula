@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceMatricula" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:56484/ServiceMatricula.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56484/ServiceMatricula.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56484/ServiceMatricula.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:56484/ServiceMatricula.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WFCServiceMatricula" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceMatricula_ListarMatriculas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMatriculas" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_ListarMatriculas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMatriculasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_BuscarporMatricula_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarporMatricula" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_BuscarporMatricula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarporMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_RegistrarMatricula_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarMatricula" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_RegistrarMatricula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_ActualizarMatricula_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMatricula" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_ActualizarMatricula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_EliminarMatricula_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMatricula" />
+  </wsdl:message>
+  <wsdl:message name="IServiceMatricula_EliminarMatricula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMatriculaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceMatricula">
+    <wsdl:operation name="ListarMatriculas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatricula/ListarMatriculas" message="tns:IServiceMatricula_ListarMatriculas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatricula/ListarMatriculasResponse" message="tns:IServiceMatricula_ListarMatriculas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarporMatricula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatricula/BuscarporMatricula" message="tns:IServiceMatricula_BuscarporMatricula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatricula/BuscarporMatriculaResponse" message="tns:IServiceMatricula_BuscarporMatricula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarMatricula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatricula/RegistrarMatricula" message="tns:IServiceMatricula_RegistrarMatricula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatricula/RegistrarMatriculaResponse" message="tns:IServiceMatricula_RegistrarMatricula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMatricula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatricula/ActualizarMatricula" message="tns:IServiceMatricula_ActualizarMatricula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatricula/ActualizarMatriculaResponse" message="tns:IServiceMatricula_ActualizarMatricula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMatricula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceMatricula/EliminarMatricula" message="tns:IServiceMatricula_EliminarMatricula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceMatricula/EliminarMatriculaResponse" message="tns:IServiceMatricula_EliminarMatricula_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceMatricula" type="tns:IServiceMatricula">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarMatriculas">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatricula/ListarMatriculas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarporMatricula">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatricula/BuscarporMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarMatricula">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatricula/RegistrarMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMatricula">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatricula/ActualizarMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMatricula">
+      <soap:operation soapAction="http://tempuri.org/IServiceMatricula/EliminarMatricula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceMatricula">
+    <wsdl:port name="BasicHttpBinding_IServiceMatricula" binding="tns:BasicHttpBinding_IServiceMatricula">
+      <soap:address location="http://localhost:56484/ServiceMatricula.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

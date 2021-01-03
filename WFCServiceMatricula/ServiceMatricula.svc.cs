@@ -18,6 +18,70 @@ namespace WFCServiceMatricula
 
         SqlConnection cn = new SqlConnection("server=.; database=bd_Matricula; uid=sa; pwd=123456;");
 
+
+
+        // FUNCION PARA LISTAR MATRICULAS
+        public DataSet ListarMatriculas()
+        {
+
+            string storeProcedure = "sp_listar_matriculas";
+
+            SqlDataAdapter adp = new SqlDataAdapter(storeProcedure, cn);
+            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+
+            return ds;
+
+        }
+
+
+        // FUNCION PARA REGISTRAR MATRICULAS
+        public String RegistrarMatricula(Matricula obj_matricula)
+        {
+
+            SqlCommand cmd = new SqlCommand("sp_registrar_matriculas", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@nombre", obj_matricula.nombre);
+            cmd.Parameters.AddWithValue("@apellido", obj_matricula.apellido);
+            cmd.Parameters.AddWithValue("@dni", obj_matricula.dni);
+            cmd.Parameters.AddWithValue("@nivel", obj_matricula.nivel);
+            cmd.Parameters.AddWithValue("@turno", obj_matricula.turno);
+            cmd.Parameters.AddWithValue("@grado", obj_matricula.grado);
+            cmd.Parameters.AddWithValue("@seccion", obj_matricula.seccion);
+            cmd.Parameters.AddWithValue("@apoderado", obj_matricula.apoderado);
+            cmd.Parameters.AddWithValue("@telefono", obj_matricula.telefono);
+
+
+            cn.Open();
+
+            String estado = "";
+
+            try
+            {
+                int reg = cmd.ExecuteNonQuery();
+                estado = "Matricula Registada";
+            }
+            catch (SqlException e)
+            {
+                estado = "Ocurrio un error al intentar registar la matricula -> " + e.Message;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+            return estado;
+
+
+        }
+
+
+
+        // FUNCION PARA ACTUALIZAR MATRICULAS
         public String ActualizarMatricula(Matricula obj_matricula)
         {
             SqlCommand cmd = new SqlCommand("sp_actualizar_matriculas", cn);
@@ -58,6 +122,8 @@ namespace WFCServiceMatricula
             return estado;
         }
 
+
+        // FUNCION PARA BUSCAR POR MATRICULAS
         public DataSet BuscarporMatricula(int id)
         {
             string cadSQL = "sp_buscar_por_id";
@@ -72,6 +138,7 @@ namespace WFCServiceMatricula
             return ds;
         }
 
+        // FUNCION PARA ELIMINAR MATRICULAS
         public String EliminarMatricula(Matricula obj_matricula)
         {
             SqlCommand cmd = new SqlCommand("sp_eliminar_matriculas", cn);
@@ -101,60 +168,7 @@ namespace WFCServiceMatricula
             return estado;
         }
 
-        public DataSet ListarMatriculas()
-        {
 
-            string storeProcedure = "sp_listar_matriculas";
-
-            SqlDataAdapter adp = new SqlDataAdapter(storeProcedure, cn);
-            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-
-            return ds;
-
-        }
-
-        public String RegistrarMatricula(Matricula obj_matricula)
-        {
-
-            SqlCommand cmd = new SqlCommand("sp_registrar_matriculas", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@nombre", obj_matricula.nombre);
-            cmd.Parameters.AddWithValue("@apellido", obj_matricula.apellido);
-            cmd.Parameters.AddWithValue("@dni", obj_matricula.dni);
-            cmd.Parameters.AddWithValue("@nivel", obj_matricula.nivel);
-            cmd.Parameters.AddWithValue("@turno", obj_matricula.turno);
-            cmd.Parameters.AddWithValue("@grado", obj_matricula.grado);
-            cmd.Parameters.AddWithValue("@seccion", obj_matricula.seccion);
-            cmd.Parameters.AddWithValue("@apoderado", obj_matricula.apoderado);
-            cmd.Parameters.AddWithValue("@telefono", obj_matricula.telefono);
-
-
-            cn.Open();
-
-            String estado = "";
-
-            try
-            {
-                int reg = cmd.ExecuteNonQuery();
-                estado = "Matricula Registada";
-            }
-            catch (SqlException e)
-            {
-                estado = "Ocurrio un error al intentar registar la matricula -> " + e.Message ;
-            }
-
-            finally
-            {
-                cn.Close();
-            }
-
-            return estado;
-
-
-        }
+     
     }
 }

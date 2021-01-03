@@ -54,13 +54,7 @@ namespace pryMatriculaEscritorio
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            if (txtNombre.Text.Length == 0 || txtApellido.Text.Length == 0 || txtDni.Text.Length == 0 || txtNivel.Text.Length == 0 || txtTurno.Text.Length == 0 || txtGrado.Text.Length == 0 || txtSeccion.Text.Length == 0 || txtApoderado.Text.Length == 0 || txtTelefono.Text.Length == 0)
-            {                
-                MessageBox.Show("Verifique que todos los campos esten completos .",
-                "Mensaje");
-                txtNombre.Focus();
-                return;
-            }
+  
             
             webserviceMatricula.Matricula obj_matricula = new webserviceMatricula.Matricula();
 
